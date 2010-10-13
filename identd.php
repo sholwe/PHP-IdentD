@@ -1,5 +1,5 @@
 <?php
-	$host = "192.168.2.2"; // The network interface that the IdentD should listen on.
+	$host = "192.168.2.2"; // The network interface that the IdentD should listen on. (IP)
 	$ident = "Freelancer"; // The Ident you would like to use.
 	$port = 113; // You probably don't need to change this; it's the default port.
 	set_time_limit(0);
