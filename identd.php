@@ -1,6 +1,6 @@
 <?php
 	$host = "127.0.0.1"; // The network interface that the IdentD should listen on. (IP)
-	$ident = "clayfreeman"; // The Ident you would like to use.
+	$ident = "clay"; // The Ident you would like to use.
 	$port = 113; // You probably don't need to change this; it's the default port.
 	set_time_limit(0);
 	$socket = socket_create(AF_INET, SOCK_STREAM, 0);
