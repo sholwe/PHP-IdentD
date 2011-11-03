@@ -3,8 +3,8 @@
 	$ident = "clay"; // The Ident you would like to use.
 	$port = 113; // You probably don't need to change this; it's the default port.
 	set_time_limit(0);
-	$socket = socket_create(AF_INET, SOCK_STREAM, 0);
-	$result = socket_bind($socket, $host, $port);
+	$socket = socket_create(AF_INET, SOCK_STREAM, 0) or die();
+	$result = socket_bind($socket, $host, $port) or die();
 	
 	function identd() {
 		global $ident;
