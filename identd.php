@@ -1,10 +1,15 @@
 <?php
+  $runas = "nobody"; // This is who we want to run this process as (drop root)
   $host = "127.0.0.1"; // The network interface that the IdentD should listen on. (IP)
   $ident = "clay"; // The Ident you would like to use.
   $port = 113; // You probably don't need to change this; it's the default port.
   set_time_limit(0);
   $socket = socket_create(AF_INET, SOCK_STREAM, 0) or die();
   $result = socket_bind($socket, $host, $port) or die();
+  // Running as root is pretty lame
+  $nobody = posix_getpwnam($runas);
+  posix_setgid($nobody['gid']) or die();
+  posix_setuid($nobody['uid']) or die();
 
   function identd() {
     global $ident;
